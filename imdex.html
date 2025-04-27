@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Free online tools for image and PDF manipulation. Compress, convert, and edit your images and PDFs easily.">
+    <meta name="keywords" content="image tools, pdf tools, online image compressor, online pdf converter, free tools">
+    <meta name="author" content="Abdul Rehman">
+    <title>All-in-One Tools | Image & PDF Tools</title>
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+
+    <!-- Styles -->
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: #f8f9fa;
+            color: #333;
+        }
+        header {
+            background: linear-gradient(135deg, #6a11cb, #2575fc);
+            padding: 2rem 1.5rem;
+            text-align: center;
+            color: white;
+        }
+        header h1 {
+            font-size: 3rem;
+            margin-bottom: 0.5rem;
+        }
+        header p {
+            font-size: 1.2rem;
+            opacity: 0.8;
+        }
+        nav {
+            background-color: #fff;
+            padding: 1rem;
+            text-align: center;
+        }
+        nav a {
+            margin: 0 1.5rem;
+            text-decoration: none;
+            color: #333;
+            font-size: 1.1rem;
+            font-weight: 500;
+        }
+        nav a:hover {
+            color: #2575fc;
+        }
+        main {
+            padding: 3rem 1.5rem;
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 2rem;
+            justify-items: center;
+            max-width: 1200px;
+            margin: auto;
+        }
+        .tool-card {
+            background: #fff;
+            border-radius: 12px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            padding: 2rem;
+            text-align: center;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .tool-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+        }
+        .tool-card h3 {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            color: #333;
+        }
+        .tool-card p {
+            font-size: 1.1rem;
+            color: #555;
+            margin-bottom: 1.5rem;
+        }
+        .tool-card button {
+            background-color: #2575fc;
+            color: white;
+            border: none;
+            padding: 0.8rem 1.6rem;
+            border-radius: 6px;
+            font-size: 1.1rem;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+        .tool-card button:hover {
+            background-color: #6a11cb;
+        }
+        footer {
+            background-color: #282c34;
+            color: #fff;
+            padding: 1.5rem 0;
+            text-align: center;
+            font-size: 1rem;
+        }
+        footer a {
+            color: #2575fc;
+            text-decoration: none;
+            font-weight: 600;
+        }
+        footer a:hover {
+            text-decoration: underline;
+        }
+        @media (max-width: 768px) {
+            header h1 {
+                font-size: 2.5rem;
+            }
+            header p {
+                font-size: 1rem;
+            }
+            nav a {
+                font-size: 1rem;
+            }
+            .tool-card {
+                padding: 1.5rem;
+            }
+            .tool-card h3 {
+                font-size: 1.3rem;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <h1>All-in-One Online Tools</h1>
+        <p>Fast, Free & Easy-to-use Tools for Image and PDF</p>
+    </header>
+
+    <nav>
+        <a href="#image-tools">Image Tools</a>
+        <a href="#pdf-tools">PDF Tools</a>
+        <a href="#about">About</a>
+    </nav>
+
+    <main>
+        <!-- Image Tools Section -->
+        <div id="image-tools">
+           <div class="tool-card">
+    <h3>Image Compressor</h3>
+    <p>Reduce the size of your images without compromising quality.</p>
+    <a href="/iamcompression.html" class="btn-link">
+        <button>Try Now</button>
+    </a>
+    </div>
+
+            <div class="tool-card">
+                <h3>Image Resizer</h3>
+                <p>Easily resize your images to the exact dimensions you need.</p>
+                <button onclick="location.href='#'">Try Now</button>
+            </div>
+            <div class="tool-card">
+                <h3>Image Converter</h3>
+                <p>Convert your images to different formats effortlessly.</p>
+                <button onclick="location.href='#'">Try Now</button>
+            </div>
+        </div>
+
+        <!-- PDF Tools Section -->
+        <div id="pdf-tools">
+            <div class="tool-card">
+                <h3>PDF Converter</h3>
+                <p>Convert PDFs to and from various formats.</p>
+                <button onclick="location.href='#'">Try Now</button>
+            </div>
+            <div class="tool-card">
+                <h3>PDF Merger</h3>
+                <p>Combine multiple PDFs into one document with ease.</p>
+                <button onclick="location.href='#'">Try Now</button>
+            </div>
+            <div class="tool-card">
+                <h3>PDF Compressor</h3>
+                <p>Reduce the size of your PDF files while maintaining quality.</p>
+                <button onclick="location.href='#'">Try Now</button>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 | Created by Abdul Rehman</p>
+        <p><a href="#">Privacy Policy</a> | <a href="#">Terms & Conditions</a></p>
+    </footer>
+
+</body>
+</html>
