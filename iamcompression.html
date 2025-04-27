@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Compress and optimize your images easily with our free online tool. Adjust quality and size for best performance!">
+    <meta name="keywords" content="image compression, image optimization, online image compressor, reduce image size">
+    <meta name="author" content="Abdul Rehman">
+    <title>Image Compressor - Free Online Tool | Fast & Easy</title>
+
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=YOUR-ADSENSE-CLIENT-ID" crossorigin="anonymous"></script>
+
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+            margin: 0;
+            padding: 0;
+            background: #f9fafb;
+            color: #333;
+        }
+        header {
+            background: linear-gradient(135deg, #6a11cb, #2575fc);
+            padding: 2rem 1rem;
+            text-align: center;
+            color: #fff;
+            border-bottom-left-radius: 20px;
+            border-bottom-right-radius: 20px;
+        }
+        header h1 {
+            margin: 0;
+            font-size: 2.5rem;
+            font-weight: 700;
+        }
+        header p {
+            margin: 0.5rem 0 0;
+            font-size: 1.2rem;
+            opacity: 0.9;
+        }
+        main {
+            padding: 2rem 1rem;
+            max-width: 1000px;
+            margin: auto;
+            display: flex;
+            flex-direction: column;
+            gap: 2rem;
+        }
+        .upload-section, .result-section, .ads-section {
+            background: white;
+            padding: 2rem;
+            border-radius: 16px;
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.08);
+            transition: all 0.3s ease;
+        }
+        .upload-section:hover, .result-section:hover {
+            transform: translateY(-5px);
+        }
+        .upload-section h2, .result-section h2 {
+            margin-top: 0;
+            font-size: 1.8rem;
+            font-weight: 600;
+        }
+        input[type="file"], input[type="range"], input[type="number"] {
+            width: 100%;
+            margin-top: 1rem;
+            padding: 0.75rem;
+            border: 1px solid #ccc;
+            border-radius: 8px;
+            font-size: 1rem;
+        }
+        .slider-container {
+            margin-top: 1.5rem;
+        }
+        .btn {
+            display: inline-block;
+            background: #2575fc;
+            color: white;
+            padding: 0.8rem 2rem;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            margin-top: 1.5rem;
+            font-size: 1.1rem;
+            font-weight: 600;
+            transition: background 0.3s ease, transform 0.2s ease;
+        }
+        .btn:hover {
+            background: #6a11cb;
+            transform: translateY(-2px);
+        }
+        .result-section img {
+            max-width: 100%;
+            margin-top: 1.5rem;
+            border-radius: 12px;
+            box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+        }
+        .ads-section {
+            text-align: center;
+        }
+        #loading {
+            display: none;
+            text-align: center;
+            font-weight: bold;
+            color: #2575fc;
+            margin-top: 1rem;
+        }
+        footer {
+            margin-top: 3rem;
+            padding: 2rem 1rem;
+            background: #e5e7eb;
+            text-align: center;
+            font-size: 0.9rem;
+            color: #555;
+            border-top-left-radius: 20px;
+            border-top-right-radius: 20px;
+        }
+        @media (max-width: 768px) {
+            header h1 {
+                font-size: 2rem;
+            }
+            .btn {
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+<header>
+    <h1>Compress Images Online</h1>
+    <p>Fast • Free • Efficient</p>
+</header>
+
+<main>
+
+    <!-- Top Ad -->
+    <div class="ads-section">
+        <ins class="adsbygoogle"
+             style="display:inline-block;width:320px;height:100px"
+             data-ad-client="YOUR-ADSENSE-CLIENT-ID"
+             data-ad-slot="YOUR-AD-UNIT-ID"></ins>
+        <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+    </div>
+
+    <!-- Upload Section -->
+    <div class="upload-section">
+        <h2>Upload Your Image</h2>
+        <input type="file" id="upload" accept="image/*">
+
+        <div class="slider-container">
+            <label>Compression Quality: <span id="qualityValue">70</span>%</label>
+            <input type="range" id="quality" min="10" max="100" value="70">
+        </div>
+
+        <div class="slider-container">
+            <label>Resize Width (optional):</label>
+            <input type="number" id="resizeWidth" placeholder="Enter width in pixels (leave blank for original)">
+        </div>
+
+        <button class="btn" onclick="compressImage()">Compress Image</button>
+
+        <div id="loading">Compressing image, please wait...</div>
+    </div>
+
+    <!-- Result Section -->
+    <div class="result-section" style="display:none;" id="resultSection">
+        <h2>Compressed Image Preview</h2>
+        <img id="compressedImage" alt="Compressed Image Preview">
+        <br>
+        <a id="downloadLink" class="btn" download="compressed-image.jpg">Download Compressed Image</a>
+    </div>
+
+    <!-- Bottom Ad -->
+    <div class="ads-section">
+        <ins class="adsbygoogle"
+             style="display:inline-block;width:320px;height:100px"
+             data-ad-client="YOUR-ADSENSE-CLIENT-ID"
+             data-ad-slot="YOUR-AD-UNIT-ID"></ins>
+        <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+    </div>
+
+</main>
+
+<footer>
+    &copy; 2025 | Created with ❤️ by Abdul Rehman
+</footer>
+
+<script>
+    const uploadInput = document.getElementById('upload');
+    const qualityInput = document.getElementById('quality');
+    const qualityValue = document.getElementById('qualityValue');
+    const resizeWidthInput = document.getElementById('resizeWidth');
+    const compressedImage = document.getElementById('compressedImage');
+    const downloadLink = document.getElementById('downloadLink');
+    const loading = document.getElementById('loading');
+    const resultSection = document.getElementById('resultSection');
+
+    qualityInput.addEventListener('input', () => {
+        qualityValue.textContent = qualityInput.value;
+    });
+
+    function compressImage() {
+        const file = uploadInput.files[0];
+        if (!file) {
+            alert('Please upload an image.');
+            return;
+        }
+
+        loading.style.display = 'block';
+        resultSection.style.display = 'none';
+
+        const reader = new FileReader();
+        reader.readAsDataURL(file);
+
+        reader.onload = (event) => {
+            const img = new Image();
+            img.src = event.target.result;
+
+            img.onload = () => {
+                const canvas = document.createElement('canvas');
+                const ctx = canvas.getContext('2d');
+
+                const desiredWidth = resizeWidthInput.value ? parseInt(resizeWidthInput.value) : img.width;
+                const aspectRatio = img.height / img.width;
+                const desiredHeight = desiredWidth * aspectRatio;
+
+                canvas.width = desiredWidth;
+                canvas.height = desiredHeight;
+
+                ctx.drawImage(img, 0, 0, desiredWidth, desiredHeight);
+
+                const quality = qualityInput.value / 100;
+                const compressedDataUrl = canvas.toDataURL('image/jpeg', quality);
+
+                compressedImage.src = compressedDataUrl;
+                downloadLink.href = compressedDataUrl;
+
+                loading.style.display = 'none';
+                resultSection.style.display = 'block';
+            };
+        };
+    }
+</script>
+
+</body>
+</html>
